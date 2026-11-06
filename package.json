@@ -1,0 +1,20 @@
+{
+  "name": "gt3rs-scroll-site",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "lenis": "^1.1.18",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  },
+  "description": "Scroll-driven 3D concept page for the Porsche 911 GT3 RS (992), built with three.js and Vite.",
+  "license": "MIT"
+}

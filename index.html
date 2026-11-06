@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0c0e" />
+  <title>911 GT3 RS</title>
+  <meta name="description" content="The 911 GT3 RS. Four litres, no turbo, nine thousand rpm. A scroll-driven 3D concept page." />
+  <meta property="og:title" content="911 GT3 RS" />
+  <meta property="og:description" content="Four litres. No turbo. Nine thousand rpm. A scroll-driven 3D concept page." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0e'/%3E%3Crect x='6' y='14' width='20' height='4' fill='%23d5001c'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="loader" role="status">
+    <div class="loader-name">911 GT3 RS</div>
+    <div class="loader-bar"><i id="loader-fill"></i></div>
+    <div class="loader-msg" id="loader-msg">Loading 0%</div>
+  </div>
+
+  <div id="bigtype" aria-hidden="true">GT3&nbsp;RS</div>
+
+  <div id="stage"><canvas id="gl"></canvas></div>
+  <div id="labels" aria-hidden="true"></div>
+
+  <!-- scroll progress drawn as a rev counter: 0 to 9,000 rpm -->
+  <aside id="tach" aria-hidden="true">
+    <div class="tach-rpm"><b id="rpm">0</b><span>rpm</span></div>
+    <div class="tach-body">
+      <ol class="tach-ticks"><li>9</li><li>8</li><li>7</li><li>6</li><li>5</li><li>4</li><li>3</li><li>2</li><li>1</li><li>0</li></ol>
+      <div class="tach-track">
+        <i class="tach-zone"></i>
+        <i class="tach-fill" id="tach-fill"></i>
+        <i class="tach-needle" id="tach-needle"></i>
+      </div>
+    </div>
+  </aside>
+
+  <noscript><p style="position:fixed;inset:auto 1rem 1rem 1rem;z-index:50">This page needs JavaScript and WebGL.</p></noscript>
+
+  <main id="story">
+    <section class="beat beat-hero">
+      <div class="copy">
+        <h1>Four litres.<br />No turbo.<br />Nine thousand rpm.</h1>
+        <p>The 911 GT3 RS, 992 generation.</p>
+      </div>
+      <div class="hint">Scroll</div>
+    </section>
+
+    <section class="beat right">
+      <div class="copy">
+        <h2>Aerodynamics first.</h2>
+        <p>A swan-neck wing, active front flaps and a drag-reducing flap in the wing. Together they press the car down with 409 kg at 200 km/h, and 860 kg at 285.</p>
+      </div>
+    </section>
+
+    <section class="beat">
+      <div class="copy">
+        <h2>Brakes from the track.</h2>
+        <p>Six-piston fixed calipers and 408 mm discs on the front axle, behind wheels that carry the weight and none of the excess.</p>
+      </div>
+    </section>
+
+    <section class="beat right">
+      <div class="copy">
+        <h2>Light where it counts.</h2>
+        <p>Carbon-fibre hood and fenders, and a kerb weight of 1,450 kg. Take the panels away and what remains is a chassis, an engine and the aero that serves them.</p>
+      </div>
+    </section>
+
+    <section class="beat">
+      <div class="copy">
+        <h2>Built to rev.</h2>
+        <p>A naturally aspirated 4.0-litre flat-six. 525 PS at 8,500 rpm, 465 Nm, and a limit of 9,000 rpm, through a seven-speed PDK.</p>
+      </div>
+    </section>
+
+    <section class="beat beat-specs">
+      <div class="specs">
+        <div class="spec"><b>525 PS</b><span>from 3,996 cc, no turbo</span></div>
+        <div class="spec"><b>3.2 s</b><span>0 to 100 km/h</span></div>
+        <div class="spec"><b>296 km/h</b><span>top speed in seventh</span></div>
+        <div class="spec"><b>6:49.3</b><span>Nürburgring Nordschleife, 20.8 km</span></div>
+      </div>
+    </section>
+
+    <section class="beat beat-end">
+      <div class="copy">
+        <h2>Choose your colour.</h2>
+        <div class="swatches" role="group" aria-label="Body colour">
+          <button class="sw is-on" data-color="#d5001c" data-name="Guards Red" aria-label="Guards Red" style="--c:#d5001c"></button>
+          <button class="sw" data-color="#d9d7d0" data-name="Chalk" aria-label="Chalk" style="--c:#d9d7d0"></button>
+          <button class="sw" data-color="#2459b3" data-name="Gentian Blue" aria-label="Gentian Blue" style="--c:#2459b3"></button>
+          <button class="sw" data-color="#7d8a91" data-name="Arctic Grey" aria-label="Arctic Grey" style="--c:#7d8a91"></button>
+          <span id="paint-name" aria-live="polite">Guards Red</span>
+        </div>
+        <a class="cta" href="#">Request a drive</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Concept page, not an official Porsche website. Porsche and 911 are trademarks of Dr. Ing. h.c. F. Porsche AG.</p>
+    <p>This work is based on “<a href="https://sketchfab.com/3d-models/porsche-911-gt3-rs-73a595bff7d5498fa1891c4a78787d26">Porsche 911 Gt3 Rs</a>” by <a href="https://sketchfab.com/musiss">musiss</a>, licensed under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
